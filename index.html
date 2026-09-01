@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B151D">
+<meta name="description" content="TRAMA — Psicoterapia y ciencia. Psicoterapia, evaluación y conocimiento psicológico basado en ciencia.">
+<title>trama — psicoterapia y ciencia</title>
+<!-- TRAMA Landing v0.2 — official local logo -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#0B151D;
+  --green:#009639;
+  --sage:#617A78;
+  --white:#F4F6F4;
+  --soft:#D6DDDA;
+  --line:rgba(244,246,244,.14);
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:"Funnel Display",Arial,sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--green);color:var(--black)}
+
+.noise{
+  position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+header{padding:28px 0;position:relative;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:29px;letter-spacing:-1.8px;font-weight:500}
+.nav-brand span{color:var(--green)}
+.nav-cta{
+  border:1px solid var(--line);padding:11px 17px;font-size:14px;
+  transition:.25s ease
+}
+.nav-cta:hover{border-color:var(--green);background:var(--green);color:var(--black)}
+
+.hero{
+  min-height:calc(100vh - 86px);
+  display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:30px;position:relative;
+  padding:70px 0 100px;
+}
+.hero-copy{position:relative;z-index:2}
+.kicker{
+  color:var(--green);font-size:13px;text-transform:uppercase;
+  letter-spacing:3px;margin-bottom:27px
+}
+h1{
+  font-size:clamp(70px,10.2vw,145px);line-height:.82;
+  font-weight:400;letter-spacing:-7px;max-width:900px
+}
+h1 em{font-style:normal;color:var(--green)}
+.hero-sub{
+  margin-top:42px;max-width:610px;color:var(--soft);
+  font-size:clamp(18px,2vw,23px);line-height:1.45;font-weight:300
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}
+.button{
+  display:inline-flex;align-items:center;gap:20px;padding:15px 20px;
+  background:var(--green);color:var(--black);font-weight:600;font-size:15px;
+  transition:.25s ease
+}
+.button:hover{transform:translateY(-3px);background:var(--white)}
+.button.secondary{background:transparent;color:var(--white);border:1px solid var(--line)}
+.button.secondary:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+
+.visual{height:560px;position:relative;display:flex;align-items:center;justify-content:center}
+.visual-glow{
+  position:absolute;width:470px;height:470px;border-radius:48% 52% 58% 42%;
+  background:rgba(97,122,120,.10);filter:blur(3px)
+}
+.official-logo{
+  position:relative;z-index:1;width:min(440px,90%);height:auto;
+  display:block;filter:drop-shadow(0 18px 45px rgba(0,0,0,.22));
+}
+
+.section{padding:90px 0 120px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
+.label{color:var(--sage);font-size:12px;letter-spacing:2.5px;text-transform:uppercase}
+.section-title{font-size:clamp(38px,5vw,68px);font-weight:400;letter-spacing:-3px;line-height:.95}
+.section-intro{max-width:440px;color:var(--soft);line-height:1.5;font-weight:300}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{
+  min-height:280px;border:1px solid var(--line);padding:28px;
+  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  overflow:hidden;background:rgba(255,255,255,.018);transition:.3s ease
+}
+.card::after{
+  content:"";position:absolute;width:190px;height:190px;right:-75px;bottom:-80px;
+  border-radius:42% 58% 55% 45%;background:var(--green);opacity:.04;transition:.3s ease
+}
+.card:hover{border-color:rgba(0,150,57,.8);transform:translateY(-4px);background:rgba(0,150,57,.055)}
+.card:hover::after{opacity:.12;transform:scale(1.15)}
+.card-num{font-size:12px;letter-spacing:2px;color:var(--green)}
+.card h3{font-size:38px;font-weight:400;letter-spacing:-1.7px;margin:28px 0 8px}
+.card p{max-width:500px;color:var(--soft);line-height:1.45;font-size:16px;font-weight:300}
+.arrow{font-size:27px;color:var(--green);align-self:flex-end}
+
+.statement{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:95px 0
+}
+.statement p{
+  max-width:1000px;font-size:clamp(35px,5.3vw,72px);line-height:1;
+  font-weight:300;letter-spacing:-3px
+}
+.statement strong{font-weight:500;color:var(--green)}
+
+.contact{
+  padding:105px 0 120px;display:grid;grid-template-columns:1fr auto;gap:50px;align-items:end
+}
+.contact h2{font-size:clamp(45px,7vw,90px);font-weight:400;letter-spacing:-5px;line-height:.9}
+.contact p{color:var(--soft);margin-top:25px;font-size:18px;font-weight:300}
+
+footer{border-top:1px solid var(--line);padding:27px 0 35px;color:var(--sage);font-size:13px}
+.footer{display:flex;justify-content:space-between;gap:25px}
+
+.logo-image{width:min(340px,75vw);height:auto;display:block;mix-blend-mode:screen}
+
+@media(max-width:820px){
+  .wrap{width:min(var(--max),calc(100% - 40px))}
+  header{padding:20px 0}
+  .hero{grid-template-columns:1fr;padding:55px 0 80px;min-height:auto}
+  .visual{height:350px;order:-1}
+  .official-logo{width:min(330px,90%)}
+  h1{letter-spacing:-4px}
+  .section{padding:75px 0 90px}
+  .section-head{display:block}
+  .section-intro{margin-top:20px}
+  .grid{grid-template-columns:1fr}
+  .card{min-height:250px}
+  .statement{padding:75px 0}
+  .statement p{letter-spacing:-1.8px}
+  .contact{grid-template-columns:1fr;padding:80px 0 90px}
+  .footer{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+<div class="noise"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="nav-brand" href="/">tr<span>ama</span></a>
+    <a class="nav-cta" href="https://agendar.tramapsicoterapia.com">Agendar consulta →</a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <div class="kicker">Psicoterapia y ciencia</div>
+      <h1>Pensar.<br>Comprender.<br><em>Transformar.</em></h1>
+      <p class="hero-sub">
+        Un espacio para la psicoterapia, la evaluación y el conocimiento psicológico
+        desde una perspectiva científica, rigurosa y humana.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="https://agendar.tramapsicoterapia.com">Comenzar un proceso <span>→</span></a>
+        <a class="button secondary" href="#explora">Explorar TRAMA <span>↓</span></a>
+      </div>
+    </div>
+
+    <div class="visual" aria-hidden="true">
+      <div class="visual-glow"></div>
+      <img class="official-logo" src="assets/logo-trama.png" alt="">
+    </div>
+  </section>
+
+  <section class="wrap section" id="explora">
+    <div class="section-head">
+      <div>
+        <div class="label">01 / Explora TRAMA</div>
+        <h2 class="section-title">Un ecosistema<br>de servicios.</h2>
+      </div>
+      <p class="section-intro">
+        Accede a los espacios de psicoterapia, evaluación y psicoeducación
+        desarrollados por TRAMA. Esta sección crecerá contigo a medida que
+        aparezcan nuevos servicios y subdominios.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <a class="card" href="https://agendar.tramapsicoterapia.com">
+        <div>
+          <div class="card-num">01 / AGENDA</div>
+          <h3>Agendar consulta</h3>
+          <p>Solicita una consulta y conoce el proceso para iniciar un espacio de psicoterapia.</p>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+
+      <a class="card" href="https://rodbtinfo.tramapsicoterapia.com">
+        <div>
+          <div class="card-num">02 / TERAPIA</div>
+          <h3>RO-DBT</h3>
+          <p>Conoce la terapia enfocada en el sobrecontrol, su modelo y sus fundamentos científicos.</p>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+
+      <a class="card" href="https://rodbt.tramapsicoterapia.com">
+        <div>
+          <div class="card-num">03 / EVALUACIÓN</div>
+          <h3>Evaluación RO-DBT</h3>
+          <p>Accede a la evaluación interactiva para explorar características relacionadas con el sobrecontrol.</p>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+
+      <a class="card" href="https://dbt.tramapsicoterapia.com">
+        <div>
+          <div class="card-num">04 / TERAPIA</div>
+          <h3>DBT</h3>
+          <p>Información sobre terapia dialéctico-conductual, habilidades, regulación y procesos de cambio.</p>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <p>
+        La psicoterapia puede ser un espacio para
+        <strong>comprender lo que ocurre</strong>,
+        desarrollar nuevas formas de responder
+        y construir cambios que tengan sentido.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap contact">
+    <div>
+      <div class="label">02 / Comienza aquí</div>
+      <h2>Tu proceso<br>empieza con<br>una conversación.</h2>
+      <p>TRAMA · Psicoterapia y ciencia · Cuenca, Ecuador</p>
+    </div>
+    <a class="button" href="https://agendar.tramapsicoterapia.com">Agendar consulta →</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer">
+    <div>trama — psicoterapia y ciencia</div>
+    <div>Cuenca · Ecuador</div>
+  </div>
+</footer>
+</body>
+</html>
